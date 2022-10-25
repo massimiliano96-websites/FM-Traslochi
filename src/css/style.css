@@ -21,14 +21,25 @@ body {
     display: flex;
 }
 
-.navbar a:hover, .navbar .active{
+.navbar a:hover {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+.navbar .active{
     color: #434343;
     text-decoration: underline;
 }
+
+.navbar .active:hover {
+    color: #434343;
+    text-decoration: underline;
+}
+
 nav .animation {
     position: absolute;
-    height: 70%;
-    top: 15%;
+    height: 50%;
+    top: 25%;
     z-index: 0;
     background: #ff9900;
     border-radius: 10px;
@@ -39,7 +50,7 @@ nav a:nth-child(1) {
     width: 100px;
 }
 
-nav .start-home, a:nth-child(1):hover~.animation, a:nth-child(1):focus~.animation {
+nav .start-home, a:nth-child(1):focus~.animation {
     width: 70px;
     left: 12px;
 }
@@ -48,7 +59,7 @@ nav a:nth-child(2) {
     width: 200px;
 }
 
-nav a:nth-child(2):hover~.animation, a:nth-child(2):focus~.animation {
+nav a:nth-child(2):focus~.animation {
     width: 180px;
     left: 115px;
 }
@@ -57,7 +68,26 @@ nav a:nth-child(3) {
     width: 200px;
 }
 
-nav a:nth-child(3):hover~.animation, a:nth-child(3):focus~.animation {
+nav a:nth-child(3):focus~.animation {
     width: 90px;
     left: 318px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,153,0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar-toggler {
+    border-color: #ff9900;
+}
+
+.jumbotron {
+    width: 95%;
+    margin: 20px auto 0px;
+    border-radius: 10px;
+    height: 300px;
+    border: 2px solid #ff9900;
+}
+
+#jumbo-shadow {
+    box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 25%);
 }
