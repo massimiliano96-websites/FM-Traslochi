@@ -116,7 +116,7 @@ nav a:nth-child(3):focus~.animation {
 #services-container {
     position: absolute;
     height: 300px;
-    width: 900px;
+    width: 50%;
     margin-top: 100px;
     left: calc(50% - 300px);
     display: flex;
@@ -150,12 +150,12 @@ nav a:nth-child(3):focus~.animation {
     transition: 0.4s ease-out;
 }
 
-.title {
+#services-container .card .title {
     color: white;
     font-weight: 300;
     position: absolute;
-    left: 20px;
-    top: 15px;
+    left: 25%;
+    top: 40px;
 }
 
 .bar {
