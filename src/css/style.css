@@ -116,10 +116,17 @@ nav a:nth-child(3):focus~.animation {
 #services-container {
     position: absolute;
     height: 300px;
-    width: 50%;
+    width: 75%;
     margin-top: 100px;
-    left: calc(50% - 300px);
+    left: calc(50% - 500px);
     display: flex;
+}
+
+#services-container img{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: 0;
 }
 
 .card {
@@ -164,6 +171,7 @@ nav a:nth-child(3):focus~.animation {
     left: 20px;
     height: 5px;
     width: 150px;
+    margin-bottom: 10px;
 }
 
 .emptybar {
