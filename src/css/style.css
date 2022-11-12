@@ -5,6 +5,7 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+
 #header-nav {
     background-color: #434343;
 }
@@ -80,9 +81,29 @@ nav a:nth-child(3):focus~.animation {
     border-color: #ff9900;
 }
 
+/* FOOTER */
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 100px;
+    margin-top: 80px;
+    padding-top: 45px;
+    background-color: #434343;
+    text-align: center;
+    color: #f1f3f4;
+}
+
+/************ MAIN CONTENT ************/
+
+.main-content {
+    margin-bottom: 50px;
+}
+
 .jumbotron {
     width: 95%;
-    margin: 20px auto 0px;
+    margin: 20px auto 30px;
     border-radius: 10px;
     height: 300px;
     border: 2px solid #ff9900;
@@ -105,7 +126,7 @@ nav a:nth-child(3):focus~.animation {
     right: 0;
     text-align: center;
     font-family: 'Krona One', sans-serif;
-    font-size: 75px;
+    font-size: 6vw;
     -webkit-text-stroke: 1px #f1f3f4;
     text-shadow: 0px 10px 5px #434343;
     background: -webkit-linear-gradient(#ff9900, #434343);
@@ -114,10 +135,10 @@ nav a:nth-child(3):focus~.animation {
 }
 
 .services-container {
-    position: absolute;
-    height: 300px;
+    height: 30%;
     width: 90%;
-    margin-top: 100px;
+    margin-top: 80px;
+    margin-bottom: 30px;
     left: 5%;
     display: flex;
 }
@@ -125,11 +146,9 @@ nav a:nth-child(3):focus~.animation {
 .card {
     display: flex;
     height: 350px;
-    width: 300px;
     background-color: #434343;
     border-radius: 10px;
     box-shadow: -1rem 0 3rem #000;
-    /*   margin-left: -50px; */
     transition: 0.4s ease-out;
     position: relative;
     left: 0px;
@@ -150,6 +169,7 @@ nav a:nth-child(3):focus~.animation {
     left: 50px;
     transition: 0.4s ease-out;
 }
+
 .services-container .card .title {
     color: #f1f3f4;
     font-weight: 300;
@@ -157,6 +177,7 @@ nav a:nth-child(3):focus~.animation {
     left: 25%;
     top: 20px;
     font-family: Roboto, sans-serif;
+    font-size: 2vw;
 }
 
 .bar {
@@ -180,7 +201,7 @@ nav a:nth-child(3):focus~.animation {
     width: 0px;
     height: 100%;
     background: #ff9900;
-    background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, #ff9900 100%);
+    background: linear-gradient(90deg, #434343 0%, rgba(217,147,0,1) 65%, #ff9900 100%);
     transition: 0.6s ease-out;
 }
 
@@ -194,22 +215,26 @@ nav a:nth-child(3):focus~.animation {
     border: 1px solid #ff9900;
 }
 
-/* Style button element */
-button {
+
+.card button {
     border: none;
-    /*padding: 12px 24px;*/
-    border-radius: 10px;
+    border-radius: 5px;
     font-weight: 600;
     color: #434343;
     font-family: Roboto, sans-serif;
-    font-size: small;
+    font-size: 1vw;
     background-color: #f1f3f4;
     display: block;
-    /* Button is a clickable element, therefore it should have a pointer cursor */
     cursor: pointer;
     position: absolute;
     left: 55%;
     top: 300px;
+}
+
+.card button:hover {
+    border: 1px solid #ff9900;
+    color: #ff9900;
+    text-decoration: underline;
 }
 
 .card:hover .filledbar {
@@ -218,8 +243,20 @@ button {
 }
 
 
-/************************************/
-@media (max-width: 992px) {
+/*************************************************************************************/
+/**************************** MEDIA QUERY *******************************/
+/*************************************************************************************/
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
     nav .animation {
         display: none;
     }
@@ -246,5 +283,82 @@ button {
     .navbar a:hover {
         color: #ff9900;
         text-decoration: none;
+    }
+
+    .card {
+    }
+}
+
+/********** Extra small devices only **********/
+@media (min-width: 500px) and (max-width: 767px ) {
+    nav .animation {
+        display: none;
+    }
+
+    nav .navbar-nav {
+        text-align: right;
+    }
+
+    .navbar .active{
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar .active:hover {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar .active:focus {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar a:hover {
+        color: #ff9900;
+        text-decoration: none;
+    }
+}
+
+/********** Super Extra small devices only **********/
+@media (max-width: 500px) {
+    nav .animation {
+        display: none;
+    }
+
+    nav .navbar-nav {
+        text-align: right;
+    }
+
+    .navbar .active{
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar .active:hover {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar .active:focus {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar a:hover {
+        color: #ff9900;
+        text-decoration: none;
+    }
+
+    .card {
+        display: flex;
+        height: 150px;
+        background-color: #434343;
+        border-radius: 10px;
+        box-shadow: -1rem 0 3rem #000;
+        transition: 0.4s ease-out;
+        position: relative;
+        left: 0px;
+        border: 1px solid #f1f3f4;
     }
 }
