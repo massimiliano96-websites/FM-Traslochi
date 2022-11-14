@@ -134,8 +134,12 @@ nav a:nth-child(3):focus~.animation {
     -webkit-text-fill-color: transparent;
 }
 
+#overflow-wrapper {
+    overflow-x: scroll;
+    height: 450px;
+}
+
 .services-container {
-    height: 30%;
     width: 90%;
     margin-top: 80px;
     margin-bottom: 30px;
@@ -145,7 +149,8 @@ nav a:nth-child(3):focus~.animation {
 
 .card {
     display: flex;
-    height: 350px;
+    min-height: 300px;
+    min-width: 250px;
     background-color: #434343;
     border-radius: 10px;
     box-shadow: -1rem 0 3rem #000;
@@ -156,7 +161,7 @@ nav a:nth-child(3):focus~.animation {
 }
 
 .card:not(:first-child) {
-    margin-left: -50px;
+    margin-left: -75px;
 }
 
 .card:hover {
@@ -174,15 +179,15 @@ nav a:nth-child(3):focus~.animation {
     color: #f1f3f4;
     font-weight: 300;
     position: absolute;
-    left: 25%;
-    top: 20px;
+    left: 20%;
+    top: 5%;
     font-family: Roboto, sans-serif;
     font-size: 2vw;
 }
 
 .bar {
     position: absolute;
-    top: 60px;
+    top: 20%;
     left: 5%;
     height: 5px;
     width: 90%;
@@ -210,11 +215,10 @@ nav a:nth-child(3):focus~.animation {
     width: 80%;
     margin-right: auto;
     margin-left: auto;
-    top: 80px;
+    top: 25%;
     border-radius: 10px;
     border: 1px solid #ff9900;
 }
-
 
 .card button {
     border: none;
@@ -228,7 +232,7 @@ nav a:nth-child(3):focus~.animation {
     cursor: pointer;
     position: absolute;
     left: 55%;
-    top: 300px;
+    top : 90%;
 }
 
 .card button:hover {
@@ -285,7 +289,8 @@ nav a:nth-child(3):focus~.animation {
         text-decoration: none;
     }
 
-    .card {
+    .services-container .card .title {
+        font-size: 3vw;
     }
 }
 
@@ -317,6 +322,10 @@ nav a:nth-child(3):focus~.animation {
     .navbar a:hover {
         color: #ff9900;
         text-decoration: none;
+    }
+
+    .services-container .card .title {
+        font-size: 8vw;
     }
 }
 
@@ -350,15 +359,7 @@ nav a:nth-child(3):focus~.animation {
         text-decoration: none;
     }
 
-    .card {
-        display: flex;
-        height: 150px;
-        background-color: #434343;
-        border-radius: 10px;
-        box-shadow: -1rem 0 3rem #000;
-        transition: 0.4s ease-out;
-        position: relative;
-        left: 0px;
-        border: 1px solid #f1f3f4;
+    .services-container .card .title {
+        font-size: 8vw;
     }
 }
