@@ -107,6 +107,8 @@ nav a:nth-child(3):focus~.animation {
     border-radius: 10px;
     height: 300px;
     border: 2px solid #ff9900;
+    background-image: url("../../images/jumbotron-test.jpeg");
+    background-size: cover;
 }
 
 #jumbo-shadow {
@@ -165,7 +167,7 @@ nav a:nth-child(3):focus~.animation {
 }
 
 .card:hover {
-    transform: translateY(-20px);
+    transform: translate(-25px, -20px);
     transition: 0.4s ease-out;
 }
 
@@ -225,6 +227,8 @@ nav a:nth-child(3):focus~.animation {
     border-radius: 5px;
     font-weight: 600;
     color: #434343;
+    min-height: 20px;
+    min-width: 50px;
     font-family: Roboto, sans-serif;
     font-size: 1vw;
     background-color: #f1f3f4;
@@ -292,6 +296,10 @@ nav a:nth-child(3):focus~.animation {
     .services-container .card .title {
         font-size: 3vw;
     }
+
+    .card button {
+        font-size: 1.5vw;
+    }
 }
 
 /********** Extra small devices only **********/
@@ -327,6 +335,10 @@ nav a:nth-child(3):focus~.animation {
     .services-container .card .title {
         font-size: 8vw;
     }
+
+    .card button {
+        font-size: 3vw;
+    }
 }
 
 /********** Super Extra small devices only **********/
@@ -359,7 +371,15 @@ nav a:nth-child(3):focus~.animation {
         text-decoration: none;
     }
 
+    .jumbotron .container h1 {
+        font-size: 10vw;
+    }
+
     .services-container .card .title {
         font-size: 8vw;
+    }
+
+    .card button {
+        font-size: 3vw;
     }
 }
