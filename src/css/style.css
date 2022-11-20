@@ -136,6 +136,17 @@ nav a:nth-child(3):focus~.animation {
     -webkit-text-fill-color: transparent;
 }
 
+#service-container-title {
+    position: relative;
+    top: 30px;
+    left: 50px;
+    font-size:2.5vw;
+    font-family: 'Krona One', sans-serif;
+    text-decoration: underline;
+    text-shadow: 0px 2px 1px #434343;
+    -webkit-text-stroke: 1px #f1f3f4;
+}
+
 #overflow-wrapper {
     overflow-x: scroll;
     height: 450px;
@@ -256,7 +267,12 @@ nav a:nth-child(3):focus~.animation {
 /*************************************************************************************/
 
 @media (min-width: 1200px) {
-
+    .jumbotron .container h1 {
+        bottom: -300px;
+    }
+    .card button {
+        font-size: 0.6vw;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -381,5 +397,10 @@ nav a:nth-child(3):focus~.animation {
 
     .card button {
         font-size: 3vw;
+    }
+
+    #service-container-title {
+        font-size: 6vw;
+        left: 15px;
     }
 }
