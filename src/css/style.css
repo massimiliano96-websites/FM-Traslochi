@@ -2,8 +2,9 @@ body {
     font-size: 16px;
     color: #434343;
     background-color: #f1f3f4;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
 }
+
 
 #header-nav {
     background-color: #434343;
@@ -80,12 +81,34 @@ nav a:nth-child(3):focus~.animation {
     border-color: #ff9900;
 }
 
+/* FOOTER */
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 100px;
+    margin-top: 80px;
+    padding-top: 45px;
+    background-color: #434343;
+    text-align: center;
+    color: #f1f3f4;
+}
+
+/************ MAIN CONTENT ************/
+
+.main-content {
+    margin-bottom: 50px;
+}
+
 .jumbotron {
     width: 95%;
-    margin: 20px auto 0px;
+    margin: 20px auto 30px;
     border-radius: 10px;
     height: 300px;
     border: 2px solid #ff9900;
+    background-image: url("../../images/jumbotron-test.jpeg");
+    background-size: cover;
 }
 
 #jumbo-shadow {
@@ -105,7 +128,7 @@ nav a:nth-child(3):focus~.animation {
     right: 0;
     text-align: center;
     font-family: 'Krona One', sans-serif;
-    font-size: 75px;
+    font-size: 6vw;
     -webkit-text-stroke: 1px #f1f3f4;
     text-shadow: 0px 10px 5px #434343;
     background: -webkit-linear-gradient(#ff9900, #434343);
@@ -113,8 +136,151 @@ nav a:nth-child(3):focus~.animation {
     -webkit-text-fill-color: transparent;
 }
 
-/************************************/
-@media (max-width: 992px) {
+#service-container-title {
+    position: relative;
+    top: 30px;
+    left: 50px;
+    font-size:2.5vw;
+    font-family: 'Krona One', sans-serif;
+    text-decoration: underline;
+    text-shadow: 0px 2px 1px #434343;
+    -webkit-text-stroke: 1px #f1f3f4;
+}
+
+#overflow-wrapper {
+    overflow-x: scroll;
+    height: 450px;
+}
+
+.services-container {
+    width: 90%;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    left: 5%;
+    display: flex;
+}
+
+.card {
+    display: flex;
+    min-height: 300px;
+    min-width: 250px;
+    background-color: #434343;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+    border: 1px solid #f1f3f4;
+}
+
+.card:not(:first-child) {
+    margin-left: -75px;
+}
+
+.card:hover {
+    transform: translate(-25px, -20px);
+    transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+}
+
+.services-container .card .title {
+    color: #f1f3f4;
+    font-weight: 300;
+    position: absolute;
+    left: 20%;
+    top: 3.5%;
+    font-family: Roboto, sans-serif;
+    font-size: 1vw;
+}
+
+.bar {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    height: 5px;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.emptybar {
+    background-color: #2e3033;
+    width: 100%;
+    height: 100%;
+}
+
+.filledbar {
+    position: absolute;
+    z-index: 3;
+    width: 0px;
+    height: 100%;
+    background: #ff9900;
+    background: linear-gradient(90deg, #434343 0%, rgba(217,147,0,1) 65%, #ff9900 100%);
+    transition: 0.6s ease-out;
+}
+
+.services-container img{
+    position: relative;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    top: 25%;
+    border-radius: 10px;
+    border: 1px solid #ff9900;
+}
+
+.card button {
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #434343;
+    min-height: 20px;
+    min-width: 50px;
+    font-family: Roboto, sans-serif;
+    font-size: 1vw;
+    background-color: #f1f3f4;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    left: 55%;
+    top : 90%;
+}
+
+.card button:hover {
+    border: 1px solid #ff9900;
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+.card:hover .filledbar {
+    width: 70%;
+    transition: 0.4s ease-out;
+}
+
+
+/*************************************************************************************/
+/**************************** MEDIA QUERY *******************************/
+/*************************************************************************************/
+
+@media (min-width: 1200px) {
+    .jumbotron .container h1 {
+        bottom: -300px;
+    }
+    .card button {
+        font-size: 0.6vw;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
     nav .animation {
         display: none;
     }
@@ -141,5 +307,100 @@ nav a:nth-child(3):focus~.animation {
     .navbar a:hover {
         color: #ff9900;
         text-decoration: none;
+    }
+
+    .services-container .card .title {
+        font-size: 2vw;
+    }
+
+    .card button {
+        font-size: 1.5vw;
+    }
+}
+
+/********** Extra small devices only **********/
+@media (min-width: 500px) and (max-width: 767px ) {
+    nav .animation {
+        display: none;
+    }
+
+    nav .navbar-nav {
+        text-align: right;
+    }
+
+    .navbar .active{
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar .active:hover {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar .active:focus {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar a:hover {
+        color: #ff9900;
+        text-decoration: none;
+    }
+
+    .services-container .card .title {
+        font-size: 6vw;
+    }
+
+    .card button {
+        font-size: 3vw;
+    }
+}
+
+/********** Super Extra small devices only **********/
+@media (max-width: 500px) {
+    nav .animation {
+        display: none;
+    }
+
+    nav .navbar-nav {
+        text-align: right;
+    }
+
+    .navbar .active{
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar .active:hover {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar .active:focus {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .navbar a:hover {
+        color: #ff9900;
+        text-decoration: none;
+    }
+
+    .jumbotron .container h1 {
+        font-size: 10vw;
+    }
+
+    .services-container .card .title {
+        font-size: 6vw;
+    }
+
+    .card button {
+        font-size: 3vw;
+    }
+
+    #service-container-title {
+        font-size: 6vw;
+        left: 15px;
     }
 }
