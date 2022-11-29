@@ -31,7 +31,9 @@ $(function () {
 (function(global) {
     let fm = {};
     let homeHtml = "snippets/home-snippet.html"
-    let allServicesUrl = "data/services.json"
+    let allServicesUrl = "../data/services.json"
+    let serviceHtml = "snippets/service-snippet.html"
+    let servicesTitleHtml = "snippets/services-title-snippet.html"
 
     // Convenience function for inserting innerHTML for 'select'
     let insertHtml = function (selector, html) {
@@ -56,11 +58,75 @@ $(function () {
     document.addEventListener("DOMContentLoaded", function (event){
         // On first load, show home view
         showLoading("#main-content");
-        $ajaxUtils.sendGetRequest(
-            homeHtml,
-            function (responseText) {
-                document.querySelector("#main-content").innerHTML = responseText;
-            },
-            false);
+            $ajaxUtils.sendGetRequest(
+                homeHtml,
+                function (homeHtml) {
+                    // Retrieve single service snippet
+                    $ajaxUtils.sendGetRequest(
+                        servicesTitleHtml,
+                        function (servicesTitleHtml) {
+                            $ajaxUtils.sendGetRequest(allServicesUrl,
+                                function (services) {
+                                $ajaxUtils.sendGetRequest(serviceHtml,
+                                    function (serviceHtml) {
+                                        let servicesViewHtml = buildHomePageHtml(services, servicesTitleHtml, homeHtml, serviceHtml);
+                                        insertHtml("#main-content", servicesViewHtml);
+                                    },
+                                    false);
+                                },
+                                        true);
+                                },
+                                false);
+                        },
+                false);
     })
+
+
+    //Using categories data and snippets html build services view HTML to be inserted into page
+    function buildHomePageHtml(services, servicesTitleHtml, homeHtml, serviceHtml){
+        let finalHtml = homeHtml;
+        finalHtml += servicesTitleHtml;
+        finalHtml += "<div id=\"overflow-wrapper\">"
+        finalHtml += "<div class=\"container services-container\">"
+
+        //Loop over services
+        for(let i = 0; i < services.length; i++) {
+            //Insert service values
+            let html = serviceHtml;
+            let name = "" + services[i].name;
+            let short_name = services[i].short_name;
+            let id = services[i].id;
+            html = insertProperty(html, "status", "");
+            html = insertProperty(html, "name", name);
+            html = insertProperty(html, "short_name", short_name);
+            html = insertProperty(html, "id", id);
+            finalHtml += html;
+        }
+        let html = "</div></div>";
+
+        finalHtml += html
+        return finalHtml;
+    }
+
+    fm.loadDescription = function (id) {
+        let allServicesUrl = "../data/services.json";
+        let html = document.getElementsByClassName("service-description")[id];
+        console.log(html);
+        $ajaxUtils.sendGetRequest(allServicesUrl,
+            function (services) {
+                for (let i = 0; i < services.length; i++) {
+                    if(services[i].id == id) {
+                        console.log(i);
+                        html = insertProperty(html, "description", services[i].description);
+                        let selector = "#service-"+id;
+                        console.log(selector);
+                        insertHtml(selector, html);
+                        break;
+                    }
+                }
+            },
+            true);
+    }
+
+    global.$fm = fm;
 })(window);

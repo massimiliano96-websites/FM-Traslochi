@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="container">
+        <h3 class="title">{{name}}</h3>
+        <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+        </div>
+    </div>
+    <img src="../images/{{short_name}}.jpeg" class="img-responsive" alt="{{name}}">
+    <button id="{{id}}" onclick="$fm.loadDescription(id);">Scopri di più</button>
+    <div class="service-description" id="service-{{id}}">{{description}}</div>
+</div>
