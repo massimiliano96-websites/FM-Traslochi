@@ -419,9 +419,9 @@ nav a:nth-child(3):focus~.animation {
     }
 
     .services-container .card .title {
-        font-size: 6vw;
-        left: 15px;
-        top: 7.5%;
+        font-size: 5.5vw;
+        left: 5%;
+        top: 5%;
     }
 
     .card button {
