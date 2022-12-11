@@ -103,29 +103,36 @@ $(function () {
             finalHtml += html;
         }
         let html = "</div></div>";
-
         finalHtml += html
+        finalHtml += "<div class=\"service-description\" id=\"service-description\">{{description}}</div>"
         return finalHtml;
     }
 
-    fm.loadDescription = function (id) {
+   fm.loadDescription = function (id) {
         let allServicesUrl = "../data/services.json";
-        let html = document.getElementsByClassName("service-description")[id];
-        console.log(html);
+        //let html = document.getElementsByClassName("service-description")[id];
+
+       let html = document.getElementById('service-description');
+        html.innerHTML = "{{description}}";
+        html.style.display = "block";
         $ajaxUtils.sendGetRequest(allServicesUrl,
             function (services) {
                 for (let i = 0; i < services.length; i++) {
-                    if(services[i].id == id) {
-                        console.log(i);
-                        html = insertProperty(html, "description", services[i].description);
-                        let selector = "#service-"+id;
-                        console.log(selector);
-                        insertHtml(selector, html);
+                    if(i == id) {
+                        html = insertProperty(html.outerHTML, "description", services[i].description);
+                        let descriptionTitle = "<p>"+ services[i].name +"</p><br>"
+                        let selector = "#service-description";
+                        let finalHtml = descriptionTitle + html;
+                        insertHtml(selector, finalHtml);
                         break;
                     }
                 }
             },
             true);
+    }
+
+    fm.collapseDescription =  function  () {
+        document.getElementById('service-description').style.display = "none";
     }
 
     global.$fm = fm;

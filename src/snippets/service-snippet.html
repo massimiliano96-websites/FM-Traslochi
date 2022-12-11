@@ -7,6 +7,5 @@
         </div>
     </div>
     <img src="../images/{{short_name}}.jpeg" class="img-responsive" alt="{{name}}">
-    <button id="{{id}}" onclick="$fm.loadDescription(id);">Scopri di più</button>
-    <div class="service-description" id="service-{{id}}">{{description}}</div>
+    <button id="{{id}}" class="service-button" onclick="$fm.loadDescription(id);" onblur="$fm.collapseDescription();">Scopri di più</button>
 </div>
