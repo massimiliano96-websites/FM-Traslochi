@@ -323,11 +323,18 @@ nav a:nth-child(3):focus~.animation {
     }
 
     .services-container .card .title {
-        font-size: 2vw;
+        font-size: 2.5vw;
+        left: 15px;
+        top: 4%;
     }
 
     .card button {
         font-size: 1.5vw;
+    }
+
+    #service-container-title {
+        font-size: 4vw;
+        left: 15px;
     }
 }
 
@@ -363,6 +370,8 @@ nav a:nth-child(3):focus~.animation {
 
     .services-container .card .title {
         font-size: 3vw;
+        left: 15px;
+        top: 7.5%;
     }
 
     .card button {
@@ -411,6 +420,8 @@ nav a:nth-child(3):focus~.animation {
 
     .services-container .card .title {
         font-size: 6vw;
+        left: 15px;
+        top: 7.5%;
     }
 
     .card button {
