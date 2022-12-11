@@ -261,6 +261,17 @@ nav a:nth-child(3):focus~.animation {
     transition: 0.4s ease-out;
 }
 
+.service-description {
+    display: none;
+    background: linear-gradient(90deg, #434343 0%, rgba(217,147,0,1) 65%, #ff9900 100%);
+    color: #f1f3f4;
+    border-radius: 10px;
+    padding: 15px;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 
 /*************************************************************************************/
 /**************************** MEDIA QUERY *******************************/
@@ -276,7 +287,9 @@ nav a:nth-child(3):focus~.animation {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-
+    .card button {
+        font-size: 0.7vw;
+    }
 }
 
 /********** Small devices only **********/
@@ -349,11 +362,16 @@ nav a:nth-child(3):focus~.animation {
     }
 
     .services-container .card .title {
-        font-size: 6vw;
+        font-size: 3vw;
     }
 
     .card button {
-        font-size: 3vw;
+        font-size: 2vw;
+    }
+
+    #service-container-title {
+        font-size: 4vw;
+        left: 15px;
     }
 }
 
