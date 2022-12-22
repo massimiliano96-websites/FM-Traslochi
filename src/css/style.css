@@ -88,7 +88,7 @@ nav a:nth-child(3):focus~.animation {
     bottom: 0px;
     width: 100%;
     height: 100px;
-    margin-top: 80px;
+    /*margin-top: 80px;*/
     padding-top: 45px;
     background-color: #434343;
     text-align: center;
@@ -98,7 +98,7 @@ nav a:nth-child(3):focus~.animation {
 /************ MAIN CONTENT ************/
 
 .main-content {
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
 }
 
 .jumbotron {
@@ -270,6 +270,29 @@ nav a:nth-child(3):focus~.animation {
     width: 95%;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 40px;
+}
+
+/********************** Contacts ************************************/
+
+#contacts-div {
+    background-image: url("../../images/contacts-img.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+#contacts-tile {
+    text-align: center;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    background-color: #44220D;
+    color: #fff;
+    opacity: .8;
+    height: 500px;
+    weight: 500px;
 }
 
 
@@ -292,11 +315,11 @@ nav a:nth-child(3):focus~.animation {
 
 @media (min-width: 992px) and (max-width: 1199px) {
     .card button {
-        font-size: 0.7vw;
+        font-size: 1vw;
     }
 
     .services-container .card .title {
-        font-size: 1.5vw;
+        font-size: 1.75vw;
     }
 }
 
