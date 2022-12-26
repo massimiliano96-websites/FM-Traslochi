@@ -99,6 +99,7 @@ nav a:nth-child(3):focus~.animation {
 
 .main-content {
     /*margin-bottom: 50px;*/
+    height: inherit;
 }
 
 .jumbotron {
@@ -271,6 +272,7 @@ nav a:nth-child(3):focus~.animation {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 40px;
+    box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 25%);
 }
 
 /********************** Contacts ************************************/
@@ -278,9 +280,10 @@ nav a:nth-child(3):focus~.animation {
 #contacts-div {
     background-image: url("../../images/contacts-img.jpg");
     background-size: cover;
-    height: 100%;
+    height: inherit;
     width: 100%;
-    padding: 50px;
+    padding-top: 250px;
+    padding-bottom: 250px;
     box-sizing: border-box;
 }
 
@@ -288,11 +291,16 @@ nav a:nth-child(3):focus~.animation {
     text-align: center;
     font-size: 1.6em;
     text-transform: uppercase;
-    background-color: #44220D;
-    color: #fff;
+    background-color: #434343;
+    color: #f1f3f4;
     opacity: .8;
-    height: 500px;
-    weight: 500px;
+    max-height: 500px;
+    max-width: 500px;
+    width: 70%;
+    height: 400px;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid #f1f3f4;
 }
 
 
