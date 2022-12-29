@@ -279,6 +279,7 @@ nav a:nth-child(3):focus~.animation {
 
 #contacts-div {
     background-image: url("../../images/contacts-img.jpg");
+    background-position: center;
     background-size: cover;
     height: inherit;
     width: 100%;
@@ -289,20 +290,71 @@ nav a:nth-child(3):focus~.animation {
 
 #contacts-tile {
     text-align: center;
-    font-size: 1.6em;
-    text-transform: uppercase;
+    font-size: 2.2vw;
     background-color: #434343;
     color: #f1f3f4;
     opacity: .8;
     max-height: 500px;
-    max-width: 500px;
-    width: 70%;
-    height: 400px;
+    width: 50%;
+    height: 600px;
     margin: auto;
     border-radius: 10px;
     border: 1px solid #f1f3f4;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Krona One', sans-serif;
 }
 
+#contacts-tile span {
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+#contacts-options {
+    margin-top: 50px;
+    font-size: 1.5vw;
+    text-align: left;
+    line-height: 50px;
+    padding-left: 10px;
+    font-family: Roboto, sans-serif;
+}
+
+#telephone-number {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+.fa-whatsapp, .fa-instagram {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.fa-whatsapp {
+    color: green;
+}
+
+.fa-instagram {
+    border-radius: 20%;
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    background-size: contain;
+    color: white;
+}
+
+#whatsapp {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+#instagram {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+#email {
+    padding-left: 5px;
+    color: #ff9900;
+    text-decoration: underline;
+}
 
 /*************************************************************************************/
 /**************************** MEDIA QUERY *******************************/
@@ -470,5 +522,28 @@ nav a:nth-child(3):focus~.animation {
     #service-container-title {
         font-size: 6vw;
         left: 15px;
+    }
+
+    #contacts-div {
+        background-image: url("../../images/contacts-img-vertical.jpg");
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    #contacts-tile {
+        font-size: 5vw;
+        width: 80%;
+        height: 380px;
+    }
+
+    #contacts-options {
+        margin-top: 10px;
+        font-size: 4vw;
+        line-height: 35px;
+    }
+
+    /* Footer */
+    .footer {
+        height: 150px;
     }
 }
