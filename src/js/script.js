@@ -34,6 +34,7 @@ $(function () {
     let allServicesUrl = "../data/services.json"
     let serviceHtml = "snippets/service-snippet.html"
     let servicesTitleHtml = "snippets/services-title-snippet.html"
+    let contactsHtml = "snippets/contacts-snippet.html";
 
     // Convenience function for inserting innerHTML for 'select'
     let insertHtml = function (selector, html) {
@@ -54,33 +55,36 @@ $(function () {
         return string;
     }
 
-    // On page load, show home view
-    document.addEventListener("DOMContentLoaded", function (event){
+    fm.loadHomePage = function () {
         // On first load, show home view
         showLoading("#main-content");
-            $ajaxUtils.sendGetRequest(
-                homeHtml,
-                function (homeHtml) {
-                    // Retrieve single service snippet
-                    $ajaxUtils.sendGetRequest(
-                        servicesTitleHtml,
-                        function (servicesTitleHtml) {
-                            $ajaxUtils.sendGetRequest(allServicesUrl,
-                                function (services) {
+        $ajaxUtils.sendGetRequest(
+            homeHtml,
+            function (homeHtml) {
+                // Retrieve single service snippet
+                $ajaxUtils.sendGetRequest(
+                    servicesTitleHtml,
+                    function (servicesTitleHtml) {
+                        $ajaxUtils.sendGetRequest(allServicesUrl,
+                            function (services) {
                                 $ajaxUtils.sendGetRequest(serviceHtml,
                                     function (serviceHtml) {
                                         let servicesViewHtml = buildHomePageHtml(services, servicesTitleHtml, homeHtml, serviceHtml);
                                         insertHtml("#main-content", servicesViewHtml);
                                     },
                                     false);
-                                },
-                                        true);
-                                },
-                                false);
-                        },
-                false);
-    })
+                            },
+                            true);
+                    },
+                    false);
+            },
+            false);
+    }
 
+    // On page load, show home view
+    document.addEventListener("DOMContentLoaded", function (event){
+        fm.loadHomePage();
+    })
 
     //Using categories data and snippets html build services view HTML to be inserted into page
     function buildHomePageHtml(services, servicesTitleHtml, homeHtml, serviceHtml){
@@ -133,6 +137,16 @@ $(function () {
 
     fm.collapseDescription =  function  () {
         document.getElementById('service-description').style.display = "none";
+    }
+
+    fm.loadContacts = function ()  {
+        showLoading("#main-content");
+        $ajaxUtils.sendGetRequest(
+            contactsHtml,
+            function (responseText) {
+                document.querySelector("#main-content").innerHTML = responseText;
+            },
+            false);
     }
 
     global.$fm = fm;
