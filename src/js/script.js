@@ -27,7 +27,6 @@ $(function () {
     });
 });
 
-
 (function(global) {
     let fm = {};
     let homeHtml = "snippets/home-snippet.html"
@@ -35,6 +34,7 @@ $(function () {
     let serviceHtml = "snippets/service-snippet.html"
     let servicesTitleHtml = "snippets/services-title-snippet.html"
     let contactsHtml = "snippets/contacts-snippet.html";
+    let faqHtml = "snippets/faq-snippet.html";
 
     // Convenience function for inserting innerHTML for 'select'
     let insertHtml = function (selector, html) {
@@ -114,9 +114,8 @@ $(function () {
 
    fm.loadDescription = function (id) {
         let allServicesUrl = "../data/services.json";
-        //let html = document.getElementsByClassName("service-description")[id];
 
-       let html = document.getElementById('service-description');
+        let html = document.getElementById('service-description');
         html.innerHTML = "{{description}}";
         html.style.display = "block";
         $ajaxUtils.sendGetRequest(allServicesUrl,
@@ -143,6 +142,29 @@ $(function () {
         showLoading("#main-content");
         $ajaxUtils.sendGetRequest(
             contactsHtml,
+            function (responseText) {
+                document.querySelector("#main-content").innerHTML = responseText;
+            },
+            false);
+    }
+
+    $(document).on("click",".accordion button", function () {
+        const itemToggle = $(this).attr('aria-expanded');
+        const items = document.querySelectorAll(".accordion button");
+        for (let i = 0; i < items.length; i++) {
+            items[i].setAttribute('aria-expanded', 'false');
+        }
+
+        if (itemToggle == 'false') {
+            $(this).attr('aria-expanded', 'true');
+        }
+    });
+
+
+    fm.loadFaq = function () {
+        showLoading("#main-content");
+        $ajaxUtils.sendGetRequest(
+            faqHtml,
             function (responseText) {
                 document.querySelector("#main-content").innerHTML = responseText;
             },
