@@ -661,4 +661,23 @@ nav a:nth-child(3):focus~.animation {
         font-size: 4vw;
         line-height: 35px;
     }
+
+    .faq-container {
+        padding: 2rem;
+    }
+
+    .faq-container h1 {
+        font-size: 6vw;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .accordion button {
+        font-size: 3.5vw;
+        min-height: 75px;
+    }
+
+    .accordion .accordion-content p, .accordion .accordion-content ul {
+        font-size: 3vw;
+    }
 }
