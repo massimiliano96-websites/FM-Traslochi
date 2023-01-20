@@ -3,6 +3,16 @@ body {
     color: #434343;
     background-color: #f1f3f4;
     font-family: Roboto, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -83,12 +93,11 @@ nav a:nth-child(3):focus~.animation {
 
 /* FOOTER */
 .footer {
-    position: relative;
+    position: absolute;
     left: 0;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     height: 100px;
-    /*margin-top: 80px;*/
     padding-top: 45px;
     background-color: #434343;
     text-align: center;
@@ -150,7 +159,7 @@ nav a:nth-child(3):focus~.animation {
 
 #overflow-wrapper {
     overflow-x: scroll;
-    height: 450px;
+    height: 500px;
 }
 
 .services-container {
@@ -356,6 +365,117 @@ nav a:nth-child(3):focus~.animation {
     text-decoration: underline;
 }
 
+/*********************************** FAQ *******************************************/
+.faq-container {
+    position: relative;
+    margin: 0 auto;
+    padding: 4rem;
+    width: 100%;
+    height: 100%;
+}
+
+.faq-container h1 {
+    font-family: 'Krona One', sans-serif;
+    text-shadow: 0px 4px 4px;
+    -webkit-text-stroke: 1px #f1f3f4;
+    font-size: 2.5vw;
+}
+
+.accordion .accordion-item {
+    border-bottom: 1px solid #f1f3f4;
+}
+.accordion .accordion-item button[aria-expanded='true'] {
+    border-bottom: 1px solid #ff9900;
+}
+.accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 1em 1em 1em;
+    color: #ff9900;
+    font-size: 1.5vw;
+    font-weight: 400;
+    border: 1px solid #ff9900;
+    outline: none;
+    background-color: #434343;
+    border-radius: 10px;
+    min-height: 100px;
+}
+.accordion button:hover, .accordion button:focus {
+    cursor: pointer;
+    color: #ff9900;
+}
+.accordion button:hover::after, .accordion button:focus::after {
+    cursor: pointer;
+    color: #ff9900;
+    border: 1px solid #ff9900;
+}
+.accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+    margin: auto 10px;
+    vertical-align: middle;
+}
+.accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+}
+.accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+}
+.accordion button[aria-expanded='true'] {
+    color: #ff9900;
+}
+.accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+}
+.accordion button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height: 20em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+    padding-left: 30px;
+}
+.accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+}
+.accordion .accordion-content p, .accordion .accordion-content ul {
+    font-size: 1vw;
+    font-weight: 300;
+    margin: 2em 0;
+}
+
+.accordion .accordion-content ul {
+    padding-left: 20px;
+}
+
+
 /*************************************************************************************/
 /**************************** MEDIA QUERY *******************************/
 /*************************************************************************************/
@@ -542,8 +662,22 @@ nav a:nth-child(3):focus~.animation {
         line-height: 35px;
     }
 
-    /* Footer */
-    .footer {
-        height: 150px;
+    .faq-container {
+        padding: 2rem;
+    }
+
+    .faq-container h1 {
+        font-size: 6vw;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .accordion button {
+        font-size: 3.5vw;
+        min-height: 75px;
+    }
+
+    .accordion .accordion-content p, .accordion .accordion-content ul {
+        font-size: 3vw;
     }
 }
