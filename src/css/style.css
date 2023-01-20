@@ -453,9 +453,10 @@ nav a:nth-child(3):focus~.animation {
 }
 .accordion button[aria-expanded='true'] + .accordion-content {
     opacity: 1;
-    max-height: 9em;
+    max-height: 20em;
     transition: all 200ms linear;
     will-change: opacity, max-height;
+    padding-left: 30px;
 }
 .accordion .accordion-content {
     opacity: 0;
@@ -464,10 +465,14 @@ nav a:nth-child(3):focus~.animation {
     transition: opacity 200ms linear, max-height 200ms linear;
     will-change: opacity, max-height;
 }
-.accordion .accordion-content p {
+.accordion .accordion-content p, .accordion .accordion-content ul {
     font-size: 1vw;
     font-weight: 300;
     margin: 2em 0;
+}
+
+.accordion .accordion-content ul {
+    padding-left: 20px;
 }
 
 
