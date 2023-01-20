@@ -132,10 +132,14 @@ $(function () {
                 }
             },
             true);
+        let footer = document.getElementById('footer');
+        footer.style.position = "relative";
     }
 
     fm.collapseDescription =  function  () {
         document.getElementById('service-description').style.display = "none";
+        let footer = document.getElementById('footer');
+        footer.style.position = "absolute";
     }
 
     fm.loadContacts = function ()  {
