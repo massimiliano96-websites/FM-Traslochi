@@ -27,6 +27,7 @@ $(function () {
     });
 });
 
+
 (function(global) {
     let fm = {};
     let homeHtml = "snippets/home-snippet.html"
@@ -134,6 +135,9 @@ $(function () {
             true);
         let footer = document.getElementById('footer');
         footer.style.position = "relative";
+        $('html,body').animate({
+               scrollTop: $(".service-description").offset().top},
+           'slow');
     }
 
     fm.collapseDescription =  function  () {
