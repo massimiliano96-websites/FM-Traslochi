@@ -146,6 +146,29 @@ nav a:nth-child(3):focus~.animation {
     -webkit-text-fill-color: transparent;
 }
 
+#price-quotation {
+    position: relative;
+    background-color: #ff9900;
+    color: #434343;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 25%);
+    top: 30px;
+    font-size:1.5vw;
+    width: fit-content;
+    block-size: fit-content;
+    text-align: center;
+    border: 2px solid #434343;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 30px auto 20px;
+    max-width: 90%;
+}
+
+#price-quotation a {
+    text-decoration: underline;
+    color: #f1f3f4;
+}
+
 #service-container-title {
     position: relative;
     top: 30px;
@@ -155,6 +178,13 @@ nav a:nth-child(3):focus~.animation {
     text-decoration: underline;
     text-shadow: 0px 2px 1px #434343;
     -webkit-text-stroke: 1px #f1f3f4;
+}
+
+#service-instructions {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    font-size:1.5vw;
 }
 
 #overflow-wrapper {
@@ -549,6 +579,17 @@ nav a:nth-child(3):focus~.animation {
         font-size: 4vw;
         left: 15px;
     }
+
+    #service-instructions {
+        font-size: 3vw;
+        left: 10px;
+    }
+
+    .card button:focus {
+        border: 1px solid #ff9900;
+        color: #ff9900;
+        text-decoration: underline;
+    }
 }
 
 /********** Extra small devices only **********/
@@ -594,6 +635,17 @@ nav a:nth-child(3):focus~.animation {
     #service-container-title {
         font-size: 4vw;
         left: 15px;
+    }
+    #service-instructions {
+        font-size: 3vw;
+        left: 10px;
+    }
+
+
+    .card button:focus {
+        border: 1px solid #ff9900;
+        color: #ff9900;
+        text-decoration: underline;
     }
 }
 
@@ -641,8 +693,18 @@ nav a:nth-child(3):focus~.animation {
         font-size: 3vw;
     }
 
+    #price-quotation {
+        font-size:5vw;
+        top: 10px;
+        margin: 10px auto 10px;
+    }
+
     #service-container-title {
         font-size: 6vw;
+        left: 15px;
+    }
+    #service-instructions {
+        font-size: 4vw;
         left: 15px;
     }
 
@@ -681,5 +743,15 @@ nav a:nth-child(3):focus~.animation {
 
     .accordion .accordion-content p, .accordion .accordion-content ul {
         font-size: 3vw;
+    }
+
+    .card button:focus {
+        border: 1px solid #ff9900;
+        color: #ff9900;
+        text-decoration: underline;
+    }
+
+    .card:not(:first-child) {
+        margin-left: 5px;
     }
 }
