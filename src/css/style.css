@@ -696,7 +696,6 @@ nav a:nth-child(3):focus~.animation {
     #price-quotation {
         font-size:5vw;
         top: 10px;
-        margin: 10px auto 10px;
     }
 
     #service-container-title {
@@ -754,4 +753,5 @@ nav a:nth-child(3):focus~.animation {
     .card:not(:first-child) {
         margin-left: 5px;
     }
-}
+
+ }

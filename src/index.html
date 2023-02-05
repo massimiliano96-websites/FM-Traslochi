@@ -15,14 +15,14 @@
 <body>
 <header>
     <nav id="header-nav" class="navbar navbar-expand-lg">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" id="navbarToggle" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav" id="navbar-nav">
-                <a class="nav-item nav-link active" href="#" onclick="$fm.loadHomePage()">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#" onclick="$fm.loadFaq()">Guida al trasloco</a>
-                <a class="nav-item nav-link" href="#" onclick="$fm.loadContacts()">Contatti</a>
+                <a class="nav-item nav-link active" id="home-navbar" href="#" onclick="$fm.loadHomePage()">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" id="faq-navbar" href="#" onclick="$fm.loadFaq()">Guida al trasloco</a>
+                <a class="nav-item nav-link" id="contacts-navbar" href="#" onclick="$fm.loadContacts()">Contatti</a>
                 <div class="animation start-home"></div>
             </div>
         </div>

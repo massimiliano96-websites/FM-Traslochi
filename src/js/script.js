@@ -16,6 +16,12 @@ $(function () {
 });
 
 $(function () {
+    $("#navbarToggle").blur(function (event) {
+        let screenWidth = window.innerWidth;
+        if (screenWidth < 768) {
+            $("#navbarNavAltMarkup").collapse('hide');
+        }
+    });
     // In Firefox and Safari, the click event doesn't retain the focus
     // on the clicked button. Therefore, the blur event will not fire on
     // user clicking somewhere else in the page and the blur event handler
@@ -26,7 +32,6 @@ $(function () {
         $(event.target).focus();
     });
 });
-
 
 (function(global) {
     let fm = {};
@@ -56,6 +61,27 @@ $(function () {
         return string;
     }
 
+    function assignCardEvents() {
+        if(window.innerWidth < 768) {
+            let cardButton = document.getElementsByClassName("service-button");
+            for (let i = 0; i < cardButton.length; i++) {
+                cardButton[i].style.display = "none";
+            }
+            let cards = document.getElementsByClassName("card");
+            for (let i = 0; i < cards.length; i++) {
+                let id = cardButton[i].id;
+                cards[i].addEventListener("click", function() {
+                    fm.loadDescription(id);
+                    document.getElementById("card-"+i).focus();
+                    document.getElementById("card-"+i).addEventListener("blur",function() {
+                        fm.collapseDescription();
+                    });
+                });
+            }
+        }
+    }
+
+
     fm.loadHomePage = function () {
         // On first load, show home view
         showLoading("#main-content");
@@ -72,6 +98,7 @@ $(function () {
                                     function (serviceHtml) {
                                         let servicesViewHtml = buildHomePageHtml(services, servicesTitleHtml, homeHtml, serviceHtml);
                                         insertHtml("#main-content", servicesViewHtml);
+                                        assignCardEvents();
                                     },
                                     false);
                             },
@@ -81,7 +108,6 @@ $(function () {
             },
             false);
     }
-
     // On page load, show home view
     document.addEventListener("DOMContentLoaded", function (event){
         fm.loadHomePage();
@@ -114,8 +140,8 @@ $(function () {
     }
 
    fm.loadDescription = function (id) {
+        console.log("clicked");
         let allServicesUrl = "../data/services.json";
-
         let html = document.getElementById('service-description');
         html.innerHTML = "{{description}}";
         html.style.display = "block";
@@ -140,13 +166,20 @@ $(function () {
            'slow');
     }
 
-    fm.collapseDescription =  function  () {
-        document.getElementById('service-description').style.display = "none";
-        let footer = document.getElementById('footer');
-        footer.style.position = "absolute";
+    fm.collapseDescription = function () {
+        console.log("collapsing description");
+        $('html,body').animate({
+            scrollTop: $("#price-quotation").offset().top
+        }, 'slow', function () {
+            document.getElementById('service-description').style.display = "none";
+            let footer = document.getElementById('footer');
+            footer.style.position = "absolute";
+        });
     }
 
     fm.loadContacts = function ()  {
+        $(".navbar .active").removeClass("active");
+        $("#contacts-navbar").addClass("active");
         showLoading("#main-content");
         $ajaxUtils.sendGetRequest(
             contactsHtml,
