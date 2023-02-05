@@ -61,6 +61,8 @@ $(function () {
         return string;
     }
 
+    let descriptionOpened = false;
+
     function assignCardEvents() {
         if(window.innerWidth < 768) {
             let cardButton = document.getElementsByClassName("service-button");
@@ -72,10 +74,17 @@ $(function () {
                 let id = cardButton[i].id;
                 cards[i].addEventListener("click", function() {
                     fm.loadDescription(id);
+                    document.getElementById("card-"+i).style.transform = 'translate(0, -20px)';
                     document.getElementById("card-"+i).focus();
                     document.getElementById("card-"+i).addEventListener("blur",function() {
                         fm.collapseDescription();
+                        document.getElementById("card-"+i).style.transform = 'translate(0, 0)';
                     });
+                    let left = $("#card-"+i).offset().left
+                    let width = $("#overflow-wrapper").width();
+                    let cardWidth = document.getElementById('card-'+i).clientWidth;
+                    let diff = left - width/2 + cardWidth/2;
+                    $("#overflow-wrapper").animate({scrollLeft: $("#overflow-wrapper").scrollLeft()+diff}, "slow");
                 });
             }
         }
@@ -141,6 +150,7 @@ $(function () {
 
    fm.loadDescription = function (id) {
         console.log("clicked");
+       descriptionOpened = true;
         let allServicesUrl = "../data/services.json";
         let html = document.getElementById('service-description');
         html.innerHTML = "{{description}}";
@@ -171,9 +181,12 @@ $(function () {
         $('html,body').animate({
             scrollTop: $("#price-quotation").offset().top
         }, 'slow', function () {
-            document.getElementById('service-description').style.display = "none";
             let footer = document.getElementById('footer');
             footer.style.position = "absolute";
+            if(!descriptionOpened) {
+                document.getElementById('service-description').style.display = "none";
+            }
+            descriptionOpened = false;
         });
     }
 

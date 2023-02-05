@@ -754,4 +754,14 @@ nav a:nth-child(3):focus~.animation {
         margin-left: 5px;
     }
 
- }
+    .card {
+        box-shadow: 1rem 0 3rem #000;
+    }
+
+    .card:hover ~ .card {
+        left: 0;
+        margin: 0 10px;
+        box-shadow: 1rem 0 #000;
+        transition: none;
+    }
+}
