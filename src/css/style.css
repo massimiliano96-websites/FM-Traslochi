@@ -94,10 +94,11 @@ nav a:nth-child(3):focus~.animation {
 /* FOOTER */
 .footer {
     position: absolute;
+    margin-top: 30px;
+    height: 100px;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 100px;
     padding-top: 45px;
     background-color: #434343;
     text-align: center;
@@ -396,6 +397,10 @@ nav a:nth-child(3):focus~.animation {
 }
 
 /*********************************** FAQ *******************************************/
+.push {
+    height: 50px;
+}
+
 .faq-container {
     position: relative;
     margin: 0 auto;
@@ -482,6 +487,7 @@ nav a:nth-child(3):focus~.animation {
     width: 0;
 }
 .accordion button[aria-expanded='true'] + .accordion-content {
+    position: relative;
     opacity: 1;
     max-height: 20em;
     transition: all 200ms linear;
@@ -708,6 +714,7 @@ nav a:nth-child(3):focus~.animation {
     }
 
     #contacts-div {
+        height: 100vh;
         background-image: url("../../images/contacts-img-vertical.jpg");
         padding-top: 120px;
         padding-bottom: 120px;

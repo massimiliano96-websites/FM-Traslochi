@@ -214,7 +214,6 @@ $(function () {
         }
     });
 
-
     fm.loadFaq = function () {
         showLoading("#main-content");
         $ajaxUtils.sendGetRequest(
