@@ -113,12 +113,13 @@ nav a:nth-child(3):focus~.animation {
 }
 
 .jumbotron {
-    width: 95%;
+    width: 85%;
     margin: 20px auto 30px;
     border-radius: 10px;
     height: 300px;
     border: 2px solid #ff9900;
-    background-image: url("../../images/jumbotron-test.jpeg");
+    background-image: url("../../images/jumbotron-prova.jpeg");
+    background-position: center;
     background-size: cover;
 }
 
@@ -684,6 +685,11 @@ nav a:nth-child(3):focus~.animation {
         color: #ff9900;
         text-decoration: none;
     }
+
+    .jumbotron {
+        background-image: url("../../images/jumbotron-xxs.jpeg");
+    }
+
 
     .jumbotron .container h1 {
         font-size: 10vw;
