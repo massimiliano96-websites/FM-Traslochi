@@ -119,7 +119,6 @@ nav a:nth-child(3):focus~.animation {
     height: 300px;
     border: 2px solid #ff9900;
     background-image: url("../../images/jumbotron-prova.jpeg");
-    background-position: center;
     background-size: cover;
 }
 
