@@ -138,7 +138,7 @@ nav a:nth-child(3):focus~.animation {
     left: 0;
     right: 0;
     text-align: center;
-    font-family: 'Krona One', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 6vw;
     -webkit-text-stroke: 1px #f1f3f4;
     text-shadow: 0px 10px 5px #434343;
@@ -175,7 +175,7 @@ nav a:nth-child(3):focus~.animation {
     top: 30px;
     left: 50px;
     font-size:2.5vw;
-    font-family: 'Krona One', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     text-decoration: underline;
     text-shadow: 0px 2px 1px #434343;
     -webkit-text-stroke: 1px #f1f3f4;
@@ -342,7 +342,7 @@ nav a:nth-child(3):focus~.animation {
     border: 1px solid #f1f3f4;
     padding-left: 10px;
     padding-right: 10px;
-    font-family: 'Krona One', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 #contacts-tile span {
@@ -410,7 +410,7 @@ nav a:nth-child(3):focus~.animation {
 }
 
 .faq-container h1 {
-    font-family: 'Krona One', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     text-shadow: 0px 4px 4px;
     -webkit-text-stroke: 1px #f1f3f4;
     font-size: 2.5vw;
