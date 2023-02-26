@@ -686,7 +686,7 @@ nav a:nth-child(3):focus~.animation {
     }
 
     .jumbotron {
-        background-image: url("../../images/jumbotron-xxs.jpeg");
+        background-image: url("../../images/jumbotron-mobile.jpeg");
     }
 
 

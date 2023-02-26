@@ -61,7 +61,7 @@ $(function () {
         return string;
     }
 
-    let descriptionOpened = false;
+    let currentID;
 
     function assignCardEvents() {
         if(window.innerWidth < 768) {
@@ -77,7 +77,7 @@ $(function () {
                     document.getElementById("card-"+i).style.transform = 'translate(0, -20px)';
                     document.getElementById("card-"+i).focus();
                     document.getElementById("card-"+i).addEventListener("blur",function() {
-                        fm.collapseDescription();
+                        fm.collapseDescription(event.target.id);
                         document.getElementById("card-"+i).style.transform = 'translate(0, 0)';
                     });
                     let left = $("#card-"+i).offset().left
@@ -149,8 +149,7 @@ $(function () {
     }
 
    fm.loadDescription = function (id) {
-        console.log("clicked");
-       descriptionOpened = true;
+        currentID = id;
         let allServicesUrl = "../data/services.json";
         let html = document.getElementById('service-description');
         html.innerHTML = "{{description}}";
@@ -176,17 +175,16 @@ $(function () {
            'slow');
     }
 
-    fm.collapseDescription = function () {
-        console.log("collapsing description");
+    fm.collapseDescription = function (id) {
         $('html,body').animate({
             scrollTop: $("#price-quotation").offset().top
         }, 'slow', function () {
-            let footer = document.getElementById('footer');
-            footer.style.position = "absolute";
-            if(!descriptionOpened) {
+            CardId = parseInt(id.slice(-1));
+            if(currentID == CardId) {
+                let footer = document.getElementById('footer');
+                footer.style.position = "absolute";
                 document.getElementById('service-description').style.display = "none";
             }
-            descriptionOpened = false;
         });
     }
 
