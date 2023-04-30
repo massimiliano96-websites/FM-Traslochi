@@ -1,31 +1,31 @@
 [{
-  "id": 1,
-  "short_name": "TA",
+  "id": 0,
+  "short_name": "TA-prova",
   "name": "Traslochi abitazioni",
   "description": "Il servizio di traslochi per abitazioni offerto dalla nostra azienda include la pianificazione e l'esecuzione del trasloco della tua abitazione, dall'inizio alla fine. Ci occupiamo di imballare e trasportare i tuoi beni, nonché di smontare e rimontare i mobili. La nostra esperienza e professionalità ci permettono di garantire che il tuo trasloco sia il più semplice e indolore possibile."
 }, {
-  "id": 2,
-  "short_name": "TU",
+  "id": 1,
+  "short_name": "TU-prova",
   "name": "Traslochi uffici",
   "description": "Il servizio di traslochi per uffici offerto dalla nostra azienda è progettato per minimizzare l'impatto sull'operatività quotidiana della tua azienda durante il trasloco. Ci occupiamo di imballare e trasportare i tuoi beni, nonché di smontare e rimontare i mobili. Offriamo anche opzioni di deposito sicuro per i tuoi documenti e attrezzature durante il trasloco. La nostra esperienza e professionalità ci permettono di garantire che il trasloco del tuo ufficio sia eseguito in modo efficiente e senza intoppi."
 },{
-  "id": 3,
-  "short_name": "MSM",
+  "id": 2,
+  "short_name": "MSM-prova",
   "name": "Montaggio arredi",
   "description": "Il servizio di montaggio arredi offerto dalla nostra azienda include la configurazione e l'assemblaggio di mobili per la tua casa o ufficio. Siamo esperti nell'assemblare tutti i tipi di mobili, dai semplici divani alle complesse camere da letto. Utilizziamo solo attrezzature e tecniche professionali per garantire che i tuoi mobili siano montati in modo sicuro e duraturo. Offriamo anche un servizio di smontaggio per i tuoi mobili esistenti, se necessario."
 }, {
-  "id": 4,
-  "short_name": "SGM",
+  "id": 3,
+  "short_name": "SGM-prova",
   "name": "Sgomberi",
   "description": "Il servizio di sgombero offerto dalla nostra azienda include la rimozione di oggetti indesiderati o inutilizzati dalla tua casa o ufficio. Siamo esperti nello sgombero di tutti i tipi di oggetti, dai mobili vecchi alle apparecchiature elettroniche. Inoltre, ci impegniamo a smaltire gli oggetti in modo responsabile, rispettando l'ambiente e le leggi locali."
 }, {
-  "id": 5,
-  "short_name": "MM",
+  "id": 4,
+  "short_name": "MM-prova",
   "name": "Modifiche mobili",
   "description": "Il servizio di modifica mobili offerto dalla nostra azienda include la personalizzazione e la modifica dei tuoi mobili esistenti per soddisfare le tue esigenze specifiche. Siamo esperti nella modifica di mobili, dai semplici tavoli agli armadi, come ad esempio l'adattamento a spazi più piccoli e altre semplici modifiche. Utilizziamo attrezzature e tecniche professionali per garantire che i tuoi mobili siano modificati in modo sicuro e duraturo."
 }, {
-  "id": 6,
-  "short_name": "MC",
+  "id": 5,
+  "short_name": "MC-prova",
   "name": "Modifiche Cucine",
   "description": "Il servizio di modifica cucine offerto dalla nostra azienda include la personalizzazione e la modifica delle tue cucine esistenti per soddisfare le tue esigenze specifiche. Siamo esperti nella modifica di tutti i tipi di cucine, dalle cucine piccole e semplici alle cucine grandi e complesse."
 }]

@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" tabindex="-1" id="card-{{id}}">
     <div class="container">
         <h3 class="title">{{name}}</h3>
         <div class="bar">
@@ -7,5 +7,5 @@
         </div>
     </div>
     <img src="../images/{{short_name}}.jpeg" class="img-responsive" alt="{{name}}">
-    <button id="{{id}}" class="service-button" onclick="$fm.loadDescription(id);" onblur="$fm.collapseDescription();">Scopri di più</button>
+    <button id="{{id}}" class="service-button" onclick="$fm.loadDescription(id);" onblur="$fm.collapseDescription(id);">Scopri di più</button>
 </div>
